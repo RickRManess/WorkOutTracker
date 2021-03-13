@@ -8,7 +8,8 @@ namespace WorkOutTracker
 {
     class UserInfo
     {
-        string userName;
+        string firstName;
+        string lastName;
         int userAge;
         int userHeight;
         int userWeight;
