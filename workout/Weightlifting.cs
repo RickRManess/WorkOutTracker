@@ -12,6 +12,6 @@ namespace WorkOutTracker
         int liftWeight;
         int liftSets;
         int liftReps;
-        DateTime;
+        DateTime DateTime; 
     }
 }

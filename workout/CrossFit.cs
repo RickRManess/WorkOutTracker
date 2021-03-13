@@ -11,6 +11,6 @@ namespace WorkOutTracker
         string crossType;
         int crossWeight;
         int crossReps;
-        DateTime;
+        DateTime DateTime;
     }
 }
