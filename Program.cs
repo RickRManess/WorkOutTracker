@@ -17,7 +17,7 @@ namespace WorkOutTracker
             Console.WriteLine("Please select lift");
             string userLift = Console.ReadLine();
             var lift = (TypeWeight)Convert.ToInt32(userLift);
-            
+
 
             //user input to choose workout weight and store in variable
             Console.WriteLine("Please enter weight for lift");
@@ -37,11 +37,16 @@ namespace WorkOutTracker
             userWorkout.liftWeight = userWeight;
             userWorkout.liftSets = userSets;
             userWorkout.liftReps = userReps;
-            
+
+            //dispaly workout selection 
+            Console.WriteLine();
+            Console.WriteLine(lift);
+            Console.WriteLine(userWeight + "lbs");
+            Console.WriteLine(userSets + "x" + userReps);
+       
+
 
         }
-
-
 
     }
 

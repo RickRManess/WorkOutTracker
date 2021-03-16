@@ -8,9 +8,9 @@ namespace WorkOutTracker
 {
     class CrossFit
     {
-        string crossType;
-        int crossWeight;
-        int crossReps;
+        public string crossType;
+        public int crossWeight;
+        public int crossReps;
         DateTime DateTime;
     }
 
