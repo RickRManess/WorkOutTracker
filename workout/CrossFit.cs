@@ -13,4 +13,6 @@ namespace WorkOutTracker
         int crossReps;
         DateTime DateTime;
     }
+
+
 }

@@ -8,10 +8,15 @@ namespace WorkOutTracker
 {
     class Weightlifting
     {
-        string liftType;
-        int liftWeight;
-        int liftSets;
-        int liftReps;
-        DateTime DateTime; 
+        public string liftType;
+        public int liftWeight;
+        public int liftSets;
+        public int liftReps;
+        DateTime DateTime;
+    public override string ToString()
+    {
+        return $"{liftType}";
+    }
+
     }
 }
