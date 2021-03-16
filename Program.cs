@@ -4,7 +4,7 @@ namespace WorkOutTracker
 {
     class Program
     {   // enum for user input workout lift
-        public enum typeWeight
+        public enum TypeWeight
         {
             BenchPress,
             Deadlift,
@@ -16,7 +16,7 @@ namespace WorkOutTracker
         {    // User input to choose workout lift and store in variable
             Console.WriteLine("Please select lift");
             string userLift = Console.ReadLine();
-            var lift = (typeWeight)Convert.ToInt32(userLift);
+            var lift = (TypeWeight)Convert.ToInt32(userLift);
             
 
             //user input to choose workout weight and store in variable
@@ -33,11 +33,11 @@ namespace WorkOutTracker
 
             //new list to store userinput as a workout 
             var userWorkout = new Weightlifting();
-            //userWorkout.liftType = lift;
+            userWorkout.LiftType = lift;
             userWorkout.liftWeight = userWeight;
             userWorkout.liftSets = userSets;
             userWorkout.liftReps = userReps;
- 
+            
 
         }
 
