@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WorkOutTracker
 {
@@ -25,11 +26,9 @@ namespace WorkOutTracker
 
         static void Main(string[] args)
         {
-            Console.WriteLine(" What type of workout do you want to do?");
-            Console.WriteLine("CrossFit = 1   Weightlifting = 2");
+            displayWelcomeScreen();
             int workoutChoice = Int32.Parse(Console.ReadLine());
             int userWorkoutChoice = 0;
-
 
             switch (workoutChoice)
             {
@@ -61,12 +60,16 @@ namespace WorkOutTracker
                 Console.WriteLine("Please enter number of reps");
                 var userCrossReps = Int32.Parse(Console.ReadLine());
 
-                //new list to store userinput as a favorite workout
+                // new list to save object as favorite
+                var crosslist = new List<CrossFit>();
+
+                //new crossfit object 
                 var userCrossWorkout = new CrossFit();
                 userCrossWorkout.CrossType = cross;
                 userCrossWorkout.crossWeight = userCrossWeight;
                 userCrossWorkout.crossSets = userCrossSets;
                 userCrossWorkout.crossReps = userCrossReps;
+                crosslist.Add(userCrossWorkout);
 
 
                 //display Crossfit workout selection
@@ -97,12 +100,16 @@ namespace WorkOutTracker
                 Console.WriteLine("Please enter number of reps");
                 int userReps = Int32.Parse(Console.ReadLine());
 
-                //new list to store userinput as a favorite workout 
+                // new list to store workout as favorite 
+                var weightList = new List<Weightlifting>();
+
+                //new weightlifting object
                 var userWorkout = new Weightlifting();
                 userWorkout.LiftType = lift;
                 userWorkout.liftWeight = userWeight;
                 userWorkout.liftSets = userSets;
                 userWorkout.liftReps = userReps;
+                weightList.Add(userWorkout);
 
                 //dispaly workout selection 
                 Console.WriteLine();
@@ -111,6 +118,13 @@ namespace WorkOutTracker
                 Console.WriteLine(userWeight + "lbs");
                 Console.WriteLine(userSets + "x" + userReps);
             }
+
+        }
+        static void displayWelcomeScreen()
+        {
+            Console.WriteLine(" What type of workout do you want to do?");
+            Console.WriteLine("CrossFit = 1   Weightlifting = 2");
+
 
         }
 
