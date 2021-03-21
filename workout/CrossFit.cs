@@ -12,10 +12,7 @@ namespace WorkOutTracker
         public CrossType CrossType;
     }
 
-    class BeerDrinking : Workout
-    {
-        public int NumOfPints;
-    }
+
 
 
 }

@@ -25,7 +25,6 @@ namespace WorkOutTracker
         public DateTime DateOfEntry;
         public TimeSpan Duration;
 
-        private int _accessCount;
 
         public int TotalWeightLifted
         {
@@ -35,18 +34,14 @@ namespace WorkOutTracker
             }
         }
 
-        private void internalCalculation()
-        {
-
-        }
-
+     
         private int myVar;
 
         public int MyProperty
         {
             get 
             {
-                _accessCount++;
+           
                 return myVar; 
             }
             set 

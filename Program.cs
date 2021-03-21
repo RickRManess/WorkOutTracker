@@ -26,10 +26,13 @@ namespace WorkOutTracker
 
         static void Main(string[] args)
         {
+            
+            //Function to display welcome screen and workout style choice
             displayWelcomeScreen();
             int workoutChoice = Int32.Parse(Console.ReadLine());
 
-               
+            //initialized new list to store user created workouts as favorites
+            var userFavoriteWorkouts = new List<Workout>();
 
             if (workoutChoice == 1)
             {
@@ -52,7 +55,7 @@ namespace WorkOutTracker
                 var userCrossReps = Int32.Parse(Console.ReadLine());
 
                 // new list to save object as favorite
-                var crosslist = new List<CrossFit>();
+                var crossList = new List<CrossFit>();
 
                 //new crossfit object 
                 var userCrossWorkout = new CrossFit
@@ -61,26 +64,9 @@ namespace WorkOutTracker
                     Weight = userCrossWeight,
                     Sets = userCrossSets,
                     Reps = userCrossReps
-                }; 
-                crosslist.Add(userCrossWorkout);
-
-                var testList = new List<Workout>();
-
-
-
-                var x = new BeerDrinking();
-                var z = new Weightlifting();
-
-                testList.Add(x);
-                testList.Add(z);
-                testList.Add(userCrossWorkout);
-
-
-                if(x.TotalWeightLifted > 1000)
-                {
-                    ; //congrats!
-                }
-
+                };
+                crossList.Add(userCrossWorkout);
+                userFavoriteWorkouts.Add(userCrossWorkout);
 
                 //display Crossfit workout selection
                 Console.WriteLine();
@@ -100,6 +86,7 @@ namespace WorkOutTracker
 
                 //user input to choose workout weight and store in variable
                 Console.WriteLine("Please enter weight for lift");
+
                 int userWeight = Int32.Parse(Console.ReadLine());
 
                 //user input to choose workout sets and store in variable
@@ -121,12 +108,11 @@ namespace WorkOutTracker
                     Sets = userSets,
                     Reps = userReps,
                     DateOfEntry = DateTime.Now
-                   
+
                 };
-
-      
-
                 weightList.Add(userWorkout);
+                userFavoriteWorkouts.Add(userWorkout);
+
 
                 //dispaly workout selection 
                 Console.WriteLine();
@@ -136,7 +122,11 @@ namespace WorkOutTracker
                 Console.WriteLine(userSets + "x" + userReps);
             }
 
+
+
         }
+
+
         static void displayWelcomeScreen()
         {
             Console.WriteLine(" What type of workout do you want to do?");
