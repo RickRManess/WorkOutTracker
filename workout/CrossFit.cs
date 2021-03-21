@@ -7,13 +7,14 @@ using static WorkOutTracker.Program;
 
 namespace WorkOutTracker
 {
-    class CrossFit
+    class CrossFit : Workout
     {
-        public TypeCross CrossType;
-        public int crossWeight;
-        public int crossSets;
-        public int crossReps;
-        DateTime DateTime;
+        public CrossType CrossType;
+    }
+
+    class BeerDrinking : Workout
+    {
+        public int NumOfPints;
     }
 
 

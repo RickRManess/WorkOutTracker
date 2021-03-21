@@ -7,7 +7,7 @@ namespace WorkOutTracker
     {
 
         //enum for user choice of Crossfit lift
-        public enum TypeCross
+        public enum CrossType
         {
             Burpees = 1,
             Thrusters,
@@ -16,7 +16,7 @@ namespace WorkOutTracker
         }
 
         // enum for user choice of Weight Lift
-        public enum TypeWeight
+        public enum WeightType
         {
             BenchPress = 1,
             Deadlift,
@@ -28,25 +28,16 @@ namespace WorkOutTracker
         {
             displayWelcomeScreen();
             int workoutChoice = Int32.Parse(Console.ReadLine());
-            int userWorkoutChoice = 0;
 
-            switch (workoutChoice)
-            {
-                case 1:
-                    userWorkoutChoice = 1;
-                    break;
-                case 2:
-                    userWorkoutChoice = 2;
-                    break;
-            }
+               
 
-            if (userWorkoutChoice == 1)
+            if (workoutChoice == 1)
             {
                 //user input to choose crossfit lift and store in variable 
                 Console.WriteLine("Please select lift");
                 Console.WriteLine("Burpees = 1  Thrusters = 2  Box Jumps = 3 Pullups = 4");
                 string userCross = Console.ReadLine();
-                var cross = (TypeCross)Convert.ToInt32(userCross);
+                var cross = (CrossType)Convert.ToInt32(userCross);
 
                 //user input to choose crossfit weight and store in variable
                 Console.WriteLine("Please select weight for lift");
@@ -64,12 +55,31 @@ namespace WorkOutTracker
                 var crosslist = new List<CrossFit>();
 
                 //new crossfit object 
-                var userCrossWorkout = new CrossFit();
-                userCrossWorkout.CrossType = cross;
-                userCrossWorkout.crossWeight = userCrossWeight;
-                userCrossWorkout.crossSets = userCrossSets;
-                userCrossWorkout.crossReps = userCrossReps;
+                var userCrossWorkout = new CrossFit
+                {
+                    CrossType = cross,
+                    Weight = userCrossWeight,
+                    Sets = userCrossSets,
+                    Reps = userCrossReps
+                }; 
                 crosslist.Add(userCrossWorkout);
+
+                var testList = new List<Workout>();
+
+
+
+                var x = new BeerDrinking();
+                var z = new Weightlifting();
+
+                testList.Add(x);
+                testList.Add(z);
+                testList.Add(userCrossWorkout);
+
+
+                if(x.TotalWeightLifted > 1000)
+                {
+                    ; //congrats!
+                }
 
 
                 //display Crossfit workout selection
@@ -86,7 +96,7 @@ namespace WorkOutTracker
                 Console.WriteLine("Please select lift");
                 Console.WriteLine("Bench Press = 1  Deadlift = 2  Military Press = 3  Squats = 4");
                 string userLift = Console.ReadLine();
-                var lift = (TypeWeight)Convert.ToInt32(userLift);
+                var lift = (WeightType)Convert.ToInt32(userLift);
 
                 //user input to choose workout weight and store in variable
                 Console.WriteLine("Please enter weight for lift");
@@ -104,11 +114,18 @@ namespace WorkOutTracker
                 var weightList = new List<Weightlifting>();
 
                 //new weightlifting object
-                var userWorkout = new Weightlifting();
-                userWorkout.LiftType = lift;
-                userWorkout.liftWeight = userWeight;
-                userWorkout.liftSets = userSets;
-                userWorkout.liftReps = userReps;
+                var userWorkout = new Weightlifting
+                {
+                    LiftType = lift,
+                    Weight = userWeight,
+                    Sets = userSets,
+                    Reps = userReps,
+                    DateOfEntry = DateTime.Now
+                   
+                };
+
+      
+
                 weightList.Add(userWorkout);
 
                 //dispaly workout selection 
