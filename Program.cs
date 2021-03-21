@@ -6,23 +6,9 @@ namespace WorkOutTracker
     class Program
     {
 
-        //enum for user choice of Crossfit lift
-        public enum CrossType
-        {
-            Burpees = 1,
-            Thrusters,
-            BoxJumps,
-            Pullup
-        }
+        
 
-        // enum for user choice of Weight Lift
-        public enum WeightType
-        {
-            BenchPress = 1,
-            Deadlift,
-            MilitaryPress,
-            Squats
-        }
+       
 
         static void Main(string[] args)
         {
