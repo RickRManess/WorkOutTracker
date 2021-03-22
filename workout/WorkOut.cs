@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace WorkOutTracker.workout
 {
-    class CrossFit
+    class WorkOut
     {
 
 
@@ -38,18 +38,6 @@ namespace WorkOutTracker.workout
         public TimeSpan Duration;
 
 
-        public void Save(string filename)
-        {
-            using (var stream = new FileStream(filename, FileMode.Create))
-            {
-                XmlSerializer XML = new XmlSerializer(typeof(CrossFit));
-                XML.Serialize(stream, this);
-
-                TextWriter WriteFileStream = new StreamWriter(@"C:\test.xml");
-                XML.Serialize(WriteFileStream, this);
-
-                WriteFileStream.Close();
-            }
-        }
+       
     }
 }

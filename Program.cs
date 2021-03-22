@@ -15,7 +15,7 @@ namespace WorkOutTracker
             int workoutChoice = Int32.Parse(Console.ReadLine());
 
             //initialized new list to store user created workouts as favorites
-            var userFavoriteWorkouts = new List<workout.CrossFit>();
+            var userFavoriteWorkouts = new List<WorkOut>();
 
             if (workoutChoice == 1)
             {

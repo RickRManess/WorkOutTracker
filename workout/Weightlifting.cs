@@ -8,7 +8,7 @@ using static WorkOutTracker.Program;
 
 namespace WorkOutTracker
 {
-    class Weightlifting : workout.CrossFit
+    class Weightlifting : WorkOut
     {
         public WeightType LiftType;
 
