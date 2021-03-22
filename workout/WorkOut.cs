@@ -1,17 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WorkOutTracker.workout
 {
-    class Workout
+    class WorkOut
     {
 
-        public int Weight { get; set; }
-        public int Sets { get; set; }
-        public int Reps { get; set; }
+        
+        private int privateWeight;
+
+        public int Weight
+        {
+            get { return Weight; }
+            set { Weight = value; }
+        }
+
+        private int privateSets;
+
+        public int Sets
+        {
+            get { return Sets; }
+            set { Sets = value; }
+        }
+
+
+        private int privateReps;
+
+        public int Reps
+        {
+            get { return Reps; }
+            set { Reps = value; }
+        }
+
 
         public DateTime DateOfEntry;
         public TimeSpan Duration;

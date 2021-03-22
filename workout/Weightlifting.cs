@@ -8,17 +8,12 @@ using static WorkOutTracker.Program;
 
 namespace WorkOutTracker
 {
-    class Weightlifting : Workout 
+    class Weightlifting : WorkOut
     {
         public WeightType LiftType;
-        public BodyPart BodyPart;
-    }
-
-    public class BodyPart
-    {
-    }
-
 
     }
+
 
 }
+

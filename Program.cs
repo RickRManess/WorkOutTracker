@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using WorkOutTracker.workout;
 
 namespace WorkOutTracker
 {
     class Program
     {
-
 
         static void Main(string[] args)
         {
@@ -15,7 +15,7 @@ namespace WorkOutTracker
             int workoutChoice = Int32.Parse(Console.ReadLine());
 
             //initialized new list to store user created workouts as favorites
-            var userFavoriteWorkouts = new List<Workout>();
+            var userFavoriteWorkouts = new List<WorkOut>();
 
             if (workoutChoice == 1)
             {
@@ -23,7 +23,7 @@ namespace WorkOutTracker
                 Console.WriteLine("Please select lift");
                 Console.WriteLine("Burpees = 1  Thrusters = 2  Box Jumps = 3 Pullups = 4");
                 string userCross = Console.ReadLine();
-                var cross = (CrossType)Convert.ToInt32(userCross);
+                var cross = (CrossType)Convert.ToInt32(userCross); 
 
                 //user input to choose crossfit weight and store in variable
                 Console.WriteLine("Please select weight for lift");
@@ -104,11 +104,7 @@ namespace WorkOutTracker
                 Console.WriteLine(userWeight + "lbs");
                 Console.WriteLine(userSets + "x" + userReps);
             }
-
-
-
         }
-
 
         static void displayWelcomeScreen()
         {
@@ -117,7 +113,6 @@ namespace WorkOutTracker
 
 
         }
-
     }
 
 }

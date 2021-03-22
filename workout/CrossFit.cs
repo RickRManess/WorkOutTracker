@@ -8,7 +8,7 @@ using static WorkOutTracker.Program;
 
 namespace WorkOutTracker
 {
-    class CrossFit : Workout 
+    class CrossFit : WorkOut 
     {
         public CrossType CrossType;
     }
