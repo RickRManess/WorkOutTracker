@@ -11,12 +11,12 @@ namespace WorkOutTracker.workout
     class SaveData
     {
 
-        private List<CrossFit> CrossList;
+        private List<CrossFit> _crossList;
 
-        public List<CrossFit> crossList
+        public List<CrossFit> CrossList
         {
-            get { return crossList; }
-            set { crossList = value; }
+            get { return _crossList; }
+            set { _crossList = value; }
         }
 
         // Create new serializer instance with the type of clss
@@ -26,12 +26,12 @@ namespace WorkOutTracker.workout
        // CrossFitSerializer.Serialize(WriteFileStream, TestObj);
 
 
-        private List<Weightlifting> weightList;
+        private List<Weightlifting> _weightList;
 
         public List<Weightlifting> WeightList
         {
-            get { return WeightList; }
-            set { WeightList = value; }
+            get { return _weightList; }
+            set { _weightList = value; }
         }
 
 
