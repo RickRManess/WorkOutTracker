@@ -6,6 +6,7 @@ namespace WorkOutTracker
 {
     class Program
     {
+        public static SaveData Storage = new SaveData();
 
         static void Main(string[] args)
         {
@@ -50,6 +51,7 @@ namespace WorkOutTracker
                 };
                 crossList.Add(userCrossWorkout);
                 userFavoriteWorkouts.Add(userCrossWorkout);
+                Storage.CrossList.Add(new CrossFit());
 
                 //display Crossfit workout selection
                 Console.WriteLine();
@@ -95,6 +97,7 @@ namespace WorkOutTracker
                 };
                 weightList.Add(userWorkout);
                 userFavoriteWorkouts.Add(userWorkout);
+                Storage.WeightList.Add(new Weightlifting());
 
 
                 //dispaly workout selection 

@@ -8,29 +8,30 @@ namespace WorkOutTracker.workout
     {
 
 
-        private int privateWeight;
+        private int _privateWeight;
 
         public int Weight
         {
-           get { return Weight; }
-           set {  }
+            get { return _privateWeight; }
+            set { _privateWeight = value; }
         }
 
-        private int privateSets;
+
+        private int _privateSets;
 
         public int Sets
         {
-            get { return Sets; }
-            set {  }
+            get { return _privateSets; }
+            set { _privateSets = value; }
         }
 
 
-        private int privateReps;
+        private int _privateReps;
 
         public int Reps
         {
-            get { return Reps; }
-            set {  }
+            get { return _privateReps; }
+            set { _privateReps = value; }
         }
 
 
@@ -38,6 +39,6 @@ namespace WorkOutTracker.workout
         public TimeSpan Duration;
 
 
-       
+
     }
 }

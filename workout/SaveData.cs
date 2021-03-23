@@ -20,7 +20,7 @@ namespace WorkOutTracker.workout
         }
 
         // Create new serializer instance with the type of clss
-        XmlSerializer CrossFitSerializer = new XmlSerializer(typeof(CrossFit));
+        XmlSerializer CrossFitSerializer = new XmlSerializer(typeof(SaveData));
 
         TextWriter WriteFileStream = new StreamWriter(@"C:\test.xml");
        // CrossFitSerializer.Serialize(WriteFileStream, TestObj);

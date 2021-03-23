@@ -8,7 +8,7 @@ namespace WorkOutTracker.workout
 {
     class UserFavorites : WorkOut
     {
-
+        
 
     }
 }
