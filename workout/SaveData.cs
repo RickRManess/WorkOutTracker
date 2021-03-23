@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace WorkOutTracker.workout
 {
@@ -17,12 +19,19 @@ namespace WorkOutTracker.workout
             set { crossList = value; }
         }
 
-        private List<Weightlifting> WeightList;
+        // Create new serializer instance with the type of clss
+        XmlSerializer CrossFitSerializer = new XmlSerializer(typeof(CrossFit));
 
-        public List<Weightlifting> weightList
+        TextWriter WriteFileStream = new StreamWriter(@"C:\test.xml");
+       // CrossFitSerializer.Serialize(WriteFileStream, TestObj);
+
+
+        private List<Weightlifting> weightList;
+
+        public List<Weightlifting> WeightList
         {
-            get { return weightList; }
-            set { weightList = value; }
+            get { return WeightList; }
+            set { WeightList = value; }
         }
 
 
