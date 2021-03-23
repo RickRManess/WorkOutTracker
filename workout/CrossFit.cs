@@ -14,9 +14,5 @@ namespace WorkOutTracker
     {
         public CrossType CrossType;
 
-
-       
-
-
     }
 }

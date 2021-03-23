@@ -12,8 +12,8 @@ namespace WorkOutTracker.workout
 
         public int Weight
         {
-            get { return Weight; }
-            set { Weight = value; }
+           get { return Weight; }
+           set {  }
         }
 
         private int privateSets;
@@ -21,7 +21,7 @@ namespace WorkOutTracker.workout
         public int Sets
         {
             get { return Sets; }
-            set { Sets = value; }
+            set {  }
         }
 
 
@@ -30,7 +30,7 @@ namespace WorkOutTracker.workout
         public int Reps
         {
             get { return Reps; }
-            set { Reps = value; }
+            set {  }
         }
 
 
