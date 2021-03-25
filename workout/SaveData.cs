@@ -19,10 +19,7 @@ namespace WorkOutTracker.workout
             set { _crossList = value; }
         }
 
-        // Create new serializer instance with the type of clss
-        XmlSerializer CrossFitSerializer = new XmlSerializer(typeof(SaveData));
-
-        TextWriter WriteFileStream = new StreamWriter(@"C:\test.xml");
+      
        // CrossFitSerializer.Serialize(WriteFileStream, TestObj);
 
 
@@ -35,6 +32,13 @@ namespace WorkOutTracker.workout
         }
 
 
+        private List<UserFavorites> _userFavorites;
+
+        public List<UserFavorites> UserFavorites
+        {
+            get { return _userFavorites; }
+            set { _userFavorites = value; }
+        }
 
 
     }

@@ -6,7 +6,7 @@ namespace WorkOutTracker
 {
     class Program
     {
-        public static SaveData Storage = new SaveData();
+        public static SaveData Storage = new();
 
         static void Main(string[] args)
         {
@@ -86,7 +86,7 @@ namespace WorkOutTracker
                 var weightList = new List<Weightlifting>();
 
                 //new weightlifting object
-                var userWorkout = new Weightlifting
+                var userWorkout = new Weightlifting  
                 {
                     LiftType = lift,
                     Weight = userWeight,
@@ -98,6 +98,7 @@ namespace WorkOutTracker
                 weightList.Add(userWorkout);
                 userFavoriteWorkouts.Add(userWorkout);
                 Storage.WeightList.Add(new Weightlifting());
+                
 
 
                 //dispaly workout selection 
@@ -107,6 +108,7 @@ namespace WorkOutTracker
                 Console.WriteLine(userWeight + "lbs");
                 Console.WriteLine(userSets + "x" + userReps);
             }
+           
         }
 
         static void displayWelcomeScreen()
