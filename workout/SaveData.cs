@@ -19,9 +19,6 @@ namespace WorkOutTracker.workout
             set { _crossList = value; }
         }
 
-      
-       // CrossFitSerializer.Serialize(WriteFileStream, TestObj);
-
 
         private List<Weightlifting> _weightList;
 

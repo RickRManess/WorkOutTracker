@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 using WorkOutTracker.workout;
 
 namespace WorkOutTracker
@@ -10,7 +12,7 @@ namespace WorkOutTracker
 
         static void Main(string[] args)
         {
-            
+
             //Function to display welcome screen and workout style choice
             displayWelcomeScreen();
             int workoutChoice = Int32.Parse(Console.ReadLine());
@@ -18,13 +20,17 @@ namespace WorkOutTracker
             //initialized new list to store user created workouts as favorites
             var userFavoriteWorkouts = new List<WorkOut>();
 
+            // Create a new file stream for reading the XML file
+            FileStream ReadFileStream = new FileStream(@"C:\CrossFitObj.xml", FileMode.Open, FileAccess.Read, FileShare.Read);
+
+
             if (workoutChoice == 1)
             {
                 //user input to choose crossfit lift and store in variable 
                 Console.WriteLine("Please select lift");
                 Console.WriteLine("Burpees = 1  Thrusters = 2  Box Jumps = 3 Pullups = 4");
                 string userCross = Console.ReadLine();
-                var cross = (CrossType)Convert.ToInt32(userCross); 
+                var cross = (CrossType)Convert.ToInt32(userCross);
 
                 //user input to choose crossfit weight and store in variable
                 Console.WriteLine("Please select weight for lift");
@@ -52,6 +58,17 @@ namespace WorkOutTracker
                 crossList.Add(userCrossWorkout);
                 userFavoriteWorkouts.Add(userCrossWorkout);
                 Storage.CrossList.Add(new CrossFit());
+
+                //New serializer to store Crossfit lists
+                XmlSerializer CrossFitSerializer = new XmlSerializer(typeof(SaveData));
+
+                // Load the object saved above by using the Deserialize function
+                CrossFit LoadedObj = (CrossFit)CrossFitSerializer.Deserialize(ReadFileStream);
+
+                // create new file stream to write the serialized object as a file
+                TextWriter WriteFileStream = new StreamWriter(@"C:\CrossFitObj.xml");
+                CrossFitSerializer.Serialize(WriteFileStream, crossList);
+
 
                 //display Crossfit workout selection
                 Console.WriteLine();
@@ -86,7 +103,7 @@ namespace WorkOutTracker
                 var weightList = new List<Weightlifting>();
 
                 //new weightlifting object
-                var userWorkout = new Weightlifting  
+                var userWorkout = new Weightlifting
                 {
                     LiftType = lift,
                     Weight = userWeight,
@@ -98,7 +115,7 @@ namespace WorkOutTracker
                 weightList.Add(userWorkout);
                 userFavoriteWorkouts.Add(userWorkout);
                 Storage.WeightList.Add(new Weightlifting());
-                
+
 
 
                 //dispaly workout selection 
@@ -108,7 +125,7 @@ namespace WorkOutTracker
                 Console.WriteLine(userWeight + "lbs");
                 Console.WriteLine(userSets + "x" + userReps);
             }
-           
+
         }
 
         static void displayWelcomeScreen()
